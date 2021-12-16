@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import NavBar from "./components/NavBar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomeView from "./views/HomeView";
+import SignUpView from "./views/SignUpView";
+import SignInView from "./views/SignInView";
+import ExploreView from "./views/ExploreView";
+import GameDetailView from "./views/GameDetail";
+import AddGameView from "./views/AddGameView";
+import { ToastContainer } from "react-toastify";
+import AuthRoute from "./components/AuthRoute";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <ToastContainer />
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<HomeView />} />
+        <Route path="/signUp" element={<SignUpView />} />
+        <Route path="/signIn" element={<SignInView />} />
+        <Route path="/explore" element={<ExploreView />} />
+        <Route path="/game/:id" element={<GameDetailView />} />
+        <Route element={<AuthRoute />}>
+          <Route path="/addGame" element={<AddGameView />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

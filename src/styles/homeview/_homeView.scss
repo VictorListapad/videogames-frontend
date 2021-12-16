@@ -1,0 +1,33 @@
+.homeCarousel {
+  img {
+    max-height: 90vh;
+    min-height: 90vh;
+    object-fit: cover;
+  }
+}
+
+.explore {
+  background: url("../../images/explore.jpeg") center/cover no-repeat scroll;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+    background: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+    padding: 1rem 6rem;
+    border-radius: 4rem;
+    color: #fff;
+    text-transform: uppercase;
+    transition: all 0.4s linear;
+    background-size: 300% 100%;
+  }
+
+  a:hover {
+    background-position: 100% 0;
+    transform: scale(1.2);
+  }
+}

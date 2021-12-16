@@ -1,14 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./styles/styles.scss";
+import GameProvider from "./context/GameContext";
+import AuthProvider from "./context/AuthContext";
+import "react-toastify/dist/ReactToastify.css";
+import PlatformProvider from "./context/PlatformContext";
+import CommentProvider from "./context/CommentContext";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <CommentProvider>
+      <GameProvider>
+        <PlatformProvider>
+          <AuthProvider>
+            <App />
+          </AuthProvider>
+        </PlatformProvider>
+      </GameProvider>
+    </CommentProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

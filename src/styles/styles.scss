@@ -1,0 +1,10 @@
+$primary-color-one: rgb(121, 181, 199);
+$primary-color-two: rgb(255, 192, 1);
+
+@import "./navbar/_navbar.scss";
+@import "./homeview/_homeView.scss";
+@import "./gameviews/_gameCardView.scss";
+@import "./gameviews/_exploreView.scss";
+@import "./gameviews/_gameDetail.scss";
+@import "./gameviews/_addGameView.scss";
+@import "./commentviews/_commentCard";

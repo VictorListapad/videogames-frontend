@@ -1,0 +1,18 @@
+.customNavbar {
+  background: linear-gradient(to right, $primary-color-two, $primary-color-one);
+
+  a {
+    text-decoration: none;
+    padding: 0.5rem 0.5rem;
+  }
+  a.active {
+    text-decoration: underline;
+  }
+  img {
+    max-height: 3rem;
+    transition: all 0.3s linear;
+  }
+  img:hover {
+    transform: scale(1.3);
+  }
+}
