@@ -10,18 +10,21 @@ import AuthProvider from "./context/AuthContext";
 import "react-toastify/dist/ReactToastify.css";
 import PlatformProvider from "./context/PlatformContext";
 import CommentProvider from "./context/CommentContext";
+import ReviewProvider from "./context/ReviewContext";
 
 ReactDOM.render(
   <React.StrictMode>
-    <CommentProvider>
-      <GameProvider>
-        <PlatformProvider>
-          <AuthProvider>
-            <App />
-          </AuthProvider>
-        </PlatformProvider>
-      </GameProvider>
-    </CommentProvider>
+    <ReviewProvider>
+      <CommentProvider>
+        <GameProvider>
+          <PlatformProvider>
+            <AuthProvider>
+              <App />
+            </AuthProvider>
+          </PlatformProvider>
+        </GameProvider>
+      </CommentProvider>
+    </ReviewProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

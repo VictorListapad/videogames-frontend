@@ -36,7 +36,7 @@ const SignInView = () => {
     navigate("/");
   };
   return (
-    <div className="formContainer">
+    <div className="signForm">
       <h2>Sign In</h2>
       <Form
         className="form"

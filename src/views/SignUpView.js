@@ -41,80 +41,82 @@ const SignUpView = () => {
   };
   return (
     <div>
-      <h2>Sign Up</h2>
-      <Form
-        className="form"
-        onSubmit={handleSubmit}
-        noValidate
-        validated={validated}
-      >
-        <Form.Group>
-          <Form.Control
-            value={user.firstName}
-            onChange={handleChange}
-            name="firstName"
-            required
-            type="text"
-            placeholder="First Name"
-          />
-          <Form.Control.Feedback type="invalid">
-            First name is required
-          </Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group>
-          <Form.Control
-            value={user.lastName}
-            onChange={handleChange}
-            name="lastName"
-            required
-            type="text"
-            placeholder="Last Name"
-          />
-          <Form.Control.Feedback type="invalid">
-            Last name is required
-          </Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group>
-          <Form.Control
-            value={user.username}
-            onChange={handleChange}
-            name="username"
-            required
-            type="text"
-            placeholder="Username"
-          />
-          <Form.Control.Feedback type="invalid">
-            Username is required
-          </Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group>
-          <Form.Control
-            value={user.email}
-            onChange={handleChange}
-            name="email"
-            required
-            type="email"
-            placeholder="Email"
-          />
-          <Form.Control.Feedback type="invalid">
-            Email is required
-          </Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group>
-          <Form.Control
-            value={user.password}
-            onChange={handleChange}
-            name="password"
-            required
-            type="password"
-            placeholder="Password"
-          />
-          <Form.Control.Feedback type="invalid">
-            Password is required
-          </Form.Control.Feedback>
-        </Form.Group>
-        <Button type="submit">Sign Up</Button>
-      </Form>
+      <div className="signForm">
+        <h2>Sign Up</h2>
+        <Form
+          className="form"
+          onSubmit={handleSubmit}
+          noValidate
+          validated={validated}
+        >
+          <Form.Group>
+            <Form.Control
+              value={user.firstName}
+              onChange={handleChange}
+              name="firstName"
+              required
+              type="text"
+              placeholder="First Name"
+            />
+            <Form.Control.Feedback type="invalid">
+              First name is required
+            </Form.Control.Feedback>
+          </Form.Group>
+          <Form.Group>
+            <Form.Control
+              value={user.lastName}
+              onChange={handleChange}
+              name="lastName"
+              required
+              type="text"
+              placeholder="Last Name"
+            />
+            <Form.Control.Feedback type="invalid">
+              Last name is required
+            </Form.Control.Feedback>
+          </Form.Group>
+          <Form.Group>
+            <Form.Control
+              value={user.username}
+              onChange={handleChange}
+              name="username"
+              required
+              type="text"
+              placeholder="Username"
+            />
+            <Form.Control.Feedback type="invalid">
+              Username is required
+            </Form.Control.Feedback>
+          </Form.Group>
+          <Form.Group>
+            <Form.Control
+              value={user.email}
+              onChange={handleChange}
+              name="email"
+              required
+              type="email"
+              placeholder="Email"
+            />
+            <Form.Control.Feedback type="invalid">
+              Email is required
+            </Form.Control.Feedback>
+          </Form.Group>
+          <Form.Group>
+            <Form.Control
+              value={user.password}
+              onChange={handleChange}
+              name="password"
+              required
+              type="password"
+              placeholder="Password"
+            />
+            <Form.Control.Feedback type="invalid">
+              Password is required
+            </Form.Control.Feedback>
+          </Form.Group>
+          <Button type="submit">Sign Up</Button>
+        </Form>
+      </div>
     </div>
   );
 };

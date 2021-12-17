@@ -1,6 +1,6 @@
 .gameCard {
   height: 40vh;
-  width: 20vw;
+  width: 23%;
   background: #fff;
   display: flex;
   flex-direction: column;
@@ -8,6 +8,7 @@
   justify-content: space-between;
   border-radius: 1rem;
   transition: all 0.3s linear;
+  margin: 1rem 0.5rem;
 
   .imageContainer {
     height: 50%;

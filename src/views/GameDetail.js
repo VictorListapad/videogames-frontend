@@ -8,6 +8,7 @@ import { AuthContext } from "../context/AuthContext";
 import { CommentContext } from "../context/CommentContext";
 import CommentForm from "../components/CommentForm";
 import CommentCard from "../components/CommentCard";
+import { ReviewContext } from "../context/ReviewContext";
 
 const GameDetailView = () => {
   const { id } = useParams();
@@ -54,7 +55,7 @@ const GameDetailView = () => {
   };
 
   const handleDelete = async (comment) => {
-    const filtered = comments.filter((val) => val !== comment);
+    const filtered = comments.filter((comm) => comm !== comment);
     setComments(filtered);
     await deleteComment(comment, comment._id);
   };

@@ -29,8 +29,8 @@ const CommentProvider = ({ children }) => {
       obj.author = user._id;
       obj.date = new Date().toLocaleDateString();
       const res = await apiHelper.post(`/comments/comment`, obj);
-      getCommentsFromGame(obj.gameId);
       toast.success("Comment created");
+      getCommentsFromGame(obj.gameId);
     } catch (error) {
       toast.error("You have to be logged in to write comments");
     }
@@ -38,12 +38,18 @@ const CommentProvider = ({ children }) => {
 
   const deleteComment = async (obj) => {
     let { user } = JSON.parse(localStorage.getItem(jwt_string));
-    if (user._id !== obj.author._id) return;
-    try {
-      await apiHelper.delete(`/comments/comment/${obj._id}`);
-      await getCommentsFromGame(obj.gameId._id);
-    } catch (error) {
-      console.log(error);
+    console.log("ROLE", user.role);
+    if (user._id === obj.author._id || user.role === "ADMIN") {
+      try {
+        await apiHelper.delete(`/comments/comment/${obj._id}`);
+        toast.success("Comment deleted");
+
+        await getCommentsFromGame(obj.gameId._id);
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      return;
     }
   };
 

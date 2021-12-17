@@ -14,11 +14,12 @@ const CommentCard = ({ comment, func }) => {
         <span> {comment.date.split("T")[0]}</span>
         <p>{comment.text}</p>
         {user?._id === comment.author._id || user.role === "ADMIN" ? (
-          <button onClick={func}>Delete</button>
+          <button className="form control btn-primary" onClick={func}>
+            Delete
+          </button>
         ) : (
           <></>
         )}
-        {/* <button onClick={func}>Delete</button> */}
       </div>
     </div>
   );
